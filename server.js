@@ -1,10 +1,12 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3000;  // Aquí se define la variable PORT
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/api/characters', async (req, res) => {
     try {
